@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new"
   end
 
-  resources :users, only: :index do
+  resources :users, only: %i[index show] do
     collection do
       get 'appendUserAttributes',  to: "users#appendUserAttributes"
       patch 'update_profile', to: "users#updateProfile"

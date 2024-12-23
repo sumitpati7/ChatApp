@@ -7,7 +7,12 @@ class UsersController < ApplicationController
     def updateProfile
         @user = current_user
         @user.update(user_params)
-        binding.pry
+        redirect_to chatrooms_index_path
+        # binding.pry
+    end
+
+    def show
+        
     end
 
     private

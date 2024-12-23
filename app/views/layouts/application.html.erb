@@ -18,7 +18,9 @@
   </head>
 
   <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200">
-    <%= render 'shared/sidebar' %>
+    <% if current_user %>
+      <%= render 'shared/navbar' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
