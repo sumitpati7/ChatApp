@@ -26,6 +26,13 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new"
   end
 
+  resources :users, only: :index do
+    collection do
+      get 'appendUserAttributes',  to: "users#appendUserAttributes"
+      patch 'update_profile', to: "users#updateProfile"
+    end
+  end
+
   # authenticated :user do
   #   root to: 'posts#index', as: :authenticated_root  # Change 'home#index' to your actual home controller and action
   # end

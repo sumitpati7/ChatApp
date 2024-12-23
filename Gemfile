@@ -63,3 +63,5 @@ gem "devise"
 gem "annotate"
 
 gem "simple_form"
+
+gem 'pry'
