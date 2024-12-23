@@ -10,6 +10,6 @@
 #  updated_at  :datetime         not null
 #
 class Message < ApplicationRecord
-  belongs_to :conversation
+  belongs_to :chatroom
   belongs_to :user
 end

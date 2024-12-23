@@ -26,6 +26,10 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new"
   end
 
+  resources :chatrooms, only: %i[index show]
+
+  resources :messages, only: %i[create]
+
   resources :users, only: %i[index show] do
     collection do
       get 'appendUserAttributes',  to: "users#appendUserAttributes"

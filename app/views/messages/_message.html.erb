@@ -1,0 +1,8 @@
+<div class="message-container w-full ">
+    <div class="message-<%= message.user.id %> bg-blue-200 w-max min-w-[55%] text-gray-900">
+        <% if message.chatroom.is_group %>
+            <%= message.user.email %>
+        <% end %> <br>
+        <%= message.content %>
+    </div>
+</div>

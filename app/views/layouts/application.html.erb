@@ -9,6 +9,15 @@
 
     <%= yield :head %>
 
+    <style>
+      <%= ".message-#{current_user.id}" %> {
+      display: flex !important;
+        justify-self: end !important;
+        background-color: green !important;
+        color: white !important;
+      }
+    </style>
+
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">

@@ -9,4 +9,8 @@
 #  updated_at :datetime         not null
 #
 class Chatroom < ApplicationRecord
+    has_many :messages
+    has_many :users
+
+    scope :groups, -> { where(is_group: true)}
 end
