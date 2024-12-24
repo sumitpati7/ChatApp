@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :authenticate_user!
     def appendUserAttributes
         @user_to_update = current_user
     end

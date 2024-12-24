@@ -1,5 +1,5 @@
 <div class="max-h-[70px]">
-    <%= simple_form_for message, url: messages_path, method: :post do |f| %>
+    <%= simple_form_for message, class: "flex", url: messages_path, method: :post do |f| %>
         <%=f.input :content, input_html: { class: "text-gray-900"}%>
         <%=f.input :user_id, wrapper_html: { class: "text-gray-900 hidden"}, input_html: {value: current_user.id } %>
         <%=f.input :chatroom_id, wrapper_html: { class: "text-gray-900 hidden"}, input_html: {value: chatroom.id } %>

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   #   root to: "devise/sessions#new"
   # end
 
+  root "chatrooms#index"
+
   resources :chatrooms, only: %i[index show]
 
   resources :messages, only: %i[create]
