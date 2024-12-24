@@ -9,5 +9,7 @@ class ChatroomsController < ApplicationController
   def show
     @chatroom = Chatroom.find(params[:id])
     @messages = @chatroom.messages
+    @users = User.all_except(current_user)
+    @chatrooms = Chatroom.groups
   end
 end

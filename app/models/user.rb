@@ -21,6 +21,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :profile_picture
+  has_many :chat_users
+  has_many :chatrooms, through: :chat_users
+
+  after_create_commit { broadcast_append_to "users" }
 
   scope :all_except, ->(user) { where.not(id: user) }
 

@@ -2,9 +2,9 @@
     <div class="message-<%= message.user.id %> flex gap-2">
         <% if message.chatroom.is_group %>
             <% if message.user.profile_picture.attached? %>
-                <%= image_tag message.user.profile_picture, class: "h-10 w-10 rounded-full "%>
+                <%= image_tag message.user.profile_picture,title: "#{message.user.user_name}", class: "h-10 w-10 rounded-full "%>
             <% else %>
-                <div class="w-10 h-10 border rounded-full flex text-center justify-center items-center"><%= message.user.first_name[0].capitalize%></div>
+                <div title="<%= message.user.user_name %>" class="w-10 h-10 border rounded-full flex text-center justify-center items-center cursor-default"><%= message.user.first_name[0].capitalize%></div>
             <% end %>
         <% end %>
         <p class="flex items-center py-1 px-2 bg-blue-200 w-max max-w-[55%] rounded-lg text-gray-900"><%= message.content %></p>

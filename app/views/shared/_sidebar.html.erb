@@ -1,0 +1,16 @@
+<div class="sidebar w-[250px] h-[calc(100vh_-_70px)] bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 text-[#ecf0f1] overflow-hidden transition-[width] duration-[0.3s] flex flex-col" id="sidebar">
+    <section class="mb-8">
+        <h2 class="text-xl text-center font-semibold border-b border-gray-300 dark:border-gray-700 my-4">Users</h2>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+          <%= turbo_stream_from "users" %>
+          <div id="users"><%= render partial: 'shared/sidebar_user', collection: users %></div>
+        </div>
+  </section>
+    <section class="mb-8">
+        <h2 class="text-xl text-center font-semibold border-b border-gray-300 dark:border-gray-700 my-4">Chat Rooms</h2>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4">
+          <%= turbo_stream_from "rooms" %>
+          <div id="rooms"><%= render rooms %></div>
+        </div>
+  </section>
+</div>
