@@ -1,5 +1,9 @@
 <%= simple_form_for @user_to_update, url: update_profile_users_path, method: :patch do |f| %>
 <%= f.input :profile_picture, input_html: { class: "block w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500", id: "photoInput", accept: "image/*" }, label_html: { class: "font-semibold text-gray-700" } %>
+  <%= f.input :user_name,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "email", class: "w-full px-4 py-2 border rounded-md border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700" } %>
   <%= f.input :first_name,
                     required: false,
                     autofocus: true,

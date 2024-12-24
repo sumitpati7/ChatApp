@@ -23,4 +23,10 @@ class User < ApplicationRecord
   has_one_attached :profile_picture
 
   scope :all_except, ->(user) { where.not(id: user) }
+
+
+  def profile_completed?
+    required_fields = [:first_name, :last_name, :user_name]
+    required_fields.all? { |field| self[field].present? }
+  end
 end
