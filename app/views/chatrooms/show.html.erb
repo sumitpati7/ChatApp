@@ -1,6 +1,6 @@
 <h1 class="text-2xl text-center"><%= @chatroom.name%></h1>
 <%= turbo_stream_from @chatroom %>
-<div class="messages px-2">
+<div class="messages p-2">
     <div class="flex flex-col gap-1 h-[calc(100vh_-_200px)] overflow-y-scroll"><%= render @messages %></div>
 </div>
 <%= render 'messages/message_form', message: Message.new, chatroom: @chatroom %>
