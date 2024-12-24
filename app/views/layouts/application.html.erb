@@ -9,14 +9,24 @@
 
     <%= yield :head %>
 
-    <style>
-      <%= ".message-#{current_user.id}" %> {
-      display: flex !important;
-        justify-self: end !important;
-        background-color: green !important;
-        color: white !important;
-      }
-    </style>
+    <% if current_user %>
+      <style>
+        <%= ".message-#{current_user.id} p" %> {
+        display: flex !important;
+          background-color: green !important;
+          color: white !important;
+        }
+        <%= ".message-#{current_user.id}" %> {
+        display: flex !important;
+          justify-self: flex-end !important;
+          flex-direction: row-reverse !important;
+          width: 100%;
+        }
+        ::-webkit-scrollbar {
+        width: 20px;
+        }
+      </style>
+    <% end %>
 
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/icon.png" type="image/png">
