@@ -1,7 +1,13 @@
 <div class="flex">
     <%= render 'shared/sidebar', users: @users, rooms: @chatrooms %>
     <div class="w-full">
-        <h1 class="text-2xl text-center"><%= @chatroom.name || @user.user_name %></h1>
+        <h1 class="text-2xl text-center">
+            <% if @chatroom.is_group %>
+                <%= @chatroom.name %>
+            <% else %>
+                <%= @user.user_name %>
+            <% end %>
+        </h1>
         <%= turbo_stream_from @chatroom %>
         <div class="messages p-2">
             <div class="flex flex-col gap-1 h-[calc(100vh_-_200px)] overflow-y-scroll"><%= render @messages %></div>
