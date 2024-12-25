@@ -9,12 +9,12 @@
   <section class="mb-8">
         <h2 class="text-xl text-center font-semibold border-b border-gray-300 text-gray-900 dark:text-gray-100 dark:border-gray-700 mt-4">Groups</h2>
         <div class="bg-white dark:bg-gray-800 shadow p-4">
-        <div class="border-b dark:border-gray-700"><%= link_to "Create a Chat Room", new_chatroom_path, class:"text-gray-900 dark:text-gray-100 hover:text-gray-500 dark:hover:text-gray-300" %></div>
+        <div class="border-b dark:border-gray-700"><%= link_to "Create a Chat Room", new_chatroom_path, class:"text-gray-900 dark:text-gray-100 hover:text-gray-500 dark:hover:Ltext-gray-300" %></div>
+          <%= turbo_stream_from "chatrooms" %>
           <% if rooms.empty? %>
             <div class="text-gray-900 dark:text-gray-100">Not chat rooms available.</div>
           <% end %>
-          <div id="rooms">
-            <%= turbo_stream_from "rooms" %>
+          <div id="chatrooms">
             <%= render rooms %>
           </div>
         </div>

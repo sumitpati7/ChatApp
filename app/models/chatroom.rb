@@ -19,7 +19,7 @@ class Chatroom < ApplicationRecord
     after_create_commit { broadcast_if_group }
 
     def broadcast_if_group
-        broadcast_append_to "rooms" if self.is_group
+        broadcast_append_to "chatrooms"
     end
 
     def self.create_private_room(room_name, users)
